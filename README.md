@@ -2,8 +2,8 @@
 
 # Prérequis : 
 
--Installation Android Studio
--Trouver l'API
+Installation Android Studio
+Trouver l'API
 
 # Projet :
 
