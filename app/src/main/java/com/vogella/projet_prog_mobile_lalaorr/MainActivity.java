@@ -1,6 +1,7 @@
 package com.vogella.projet_prog_mobile_lalaorr;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
@@ -32,5 +33,11 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         mAdapter = new MyAdapter(amiibogossList);
         recyclerView.setAdapter(mAdapter);
+    }
+
+    public void DetailAmiibogoss()
+    {
+        Intent detailAmiibogoss = new Intent(this, Detailed_amiibogoss.class);
+        startActivity(detailAmiibogoss);
     }
 }

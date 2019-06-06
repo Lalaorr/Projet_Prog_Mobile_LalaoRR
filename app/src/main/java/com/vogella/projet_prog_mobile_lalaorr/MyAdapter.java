@@ -1,7 +1,9 @@
 package com.vogella.projet_prog_mobile_lalaorr;
 
 import java.util.List;
+import com.vogella.projet_prog_mobile_lalaorr.MainActivity;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private List<Amiibogoss> values;
+    private Intent detailAmiibogoss;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -62,13 +65,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         final Amiibogoss selectedAmiibogoss = values.get(position);
-        holder.txtHeader.setText(selectedAmiibogoss.getCharacter()+selectedAmiibogoss.getAmiiboSeries());
-        holder.txtHeader.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                remove(position);
-            }
-        });
+        holder.txtHeader.setText(selectedAmiibogoss.getCharacter()/*+selectedAmiibogoss.getAmiiboSeries()*/);
+        /*holder.txtHeader.setOnClickListener(
+                Intent detailAmiibogoss = new Intent(this, Detailed_amiibogoss.class);
+                startActivity(detailAmiibogoss);
+        );*/
 
         holder.txtFooter.setText("Game : " + selectedAmiibogoss.getGameSeries());
     }
