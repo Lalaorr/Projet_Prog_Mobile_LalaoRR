@@ -1,5 +1,6 @@
 package com.vogella.projet_prog_mobile_lalaorr;
 
+import java.util.ArrayList;
 import java.util.List;
 import com.vogella.projet_prog_mobile_lalaorr.MainActivity;
 
@@ -15,6 +16,7 @@ import android.widget.TextView;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private List<Amiibogoss> values;
     private Intent detailAmiibogoss;
+    private MainActivity mainActivity;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -44,8 +46,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(List<Amiibogoss> values) {
+    public MyAdapter(List<Amiibogoss> values, MainActivity mainActivity) {
         this.values = values;
+        this.mainActivity = mainActivity;
     }
 
     // Create new views (invoked by the layout manager)
@@ -58,7 +61,20 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         ViewHolder vh = new ViewHolder(v);
         return vh;
     }
+    private static final String SelectedAmiibogoss = "incoming Amiibo";
+    public void DetailAmiibogoss(int position)
+    {
+        Intent detailAmiibogoss = new Intent(mainActivity, Detailed_amiibogoss.class);
+        final Amiibogoss selectedAmiibogoss = values.get(position);
 
+        ArrayList<String> AmiibogossFiesta = new ArrayList<>();
+        AmiibogossFiesta.add(selectedAmiibogoss.getCharacter());
+        AmiibogossFiesta.add(selectedAmiibogoss.getGameSeries());
+        AmiibogossFiesta.add(selectedAmiibogoss.getAmiiboSeries());
+
+        detailAmiibogoss.putStringArrayListExtra(SelectedAmiibogoss, AmiibogossFiesta);
+        mainActivity.startActivity(detailAmiibogoss);
+    }
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
@@ -66,10 +82,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         // - replace the contents of the view with that element
         final Amiibogoss selectedAmiibogoss = values.get(position);
         holder.txtHeader.setText(selectedAmiibogoss.getCharacter()/*+selectedAmiibogoss.getAmiiboSeries()*/);
-        /*holder.txtHeader.setOnClickListener(
-                Intent detailAmiibogoss = new Intent(this, Detailed_amiibogoss.class);
-                startActivity(detailAmiibogoss);
-        );*/
+        holder.txtHeader.setOnClickListener(new OnClickListener() {
+                                                @Override
+                                                public void onClick(View v) {
+                                                    DetailAmiibogoss(position);
+                                                }
+                                            }
+        );
 
         holder.txtFooter.setText("Game : " + selectedAmiibogoss.getGameSeries());
     }

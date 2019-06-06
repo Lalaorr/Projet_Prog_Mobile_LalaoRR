@@ -31,13 +31,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        mAdapter = new MyAdapter(amiibogossList);
+        mAdapter = new MyAdapter(amiibogossList,this);
         recyclerView.setAdapter(mAdapter);
-    }
-
-    public void DetailAmiibogoss()
-    {
-        Intent detailAmiibogoss = new Intent(this, Detailed_amiibogoss.class);
-        startActivity(detailAmiibogoss);
     }
 }
