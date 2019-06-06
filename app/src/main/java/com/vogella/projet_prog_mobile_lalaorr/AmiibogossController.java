@@ -1,10 +1,5 @@
 package com.vogella.projet_prog_mobile_lalaorr;
 
-import com.vogella.projet_prog_mobile_lalaorr.AmiiboAPI;
-import com.vogella.projet_prog_mobile_lalaorr.Amiibogoss;
-import com.vogella.projet_prog_mobile_lalaorr.apiResponse;
-import com.vogella.projet_prog_mobile_lalaorr.MainActivity;
-
 import java.util.List;
 
 import retrofit2.Call;

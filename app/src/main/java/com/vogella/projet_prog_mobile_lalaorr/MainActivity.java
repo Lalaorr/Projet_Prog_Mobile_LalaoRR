@@ -6,11 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.LinearLayoutManager;
 
-import com.vogella.projet_prog_mobile_lalaorr.R;
-import com.vogella.projet_prog_mobile_lalaorr.Injection;
-import com.vogella.projet_prog_mobile_lalaorr.AmiibogossController;
-import com.vogella.projet_prog_mobile_lalaorr.Amiibogoss;
-
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {

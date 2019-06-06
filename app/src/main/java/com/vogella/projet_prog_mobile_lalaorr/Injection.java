@@ -16,7 +16,7 @@ public class Injection {
                 .create();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://www.amiiboapi.com/")
+                .baseUrl("https://amiiboapi.com/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
         amiiboAPI = retrofit.create(AmiiboAPI.class);

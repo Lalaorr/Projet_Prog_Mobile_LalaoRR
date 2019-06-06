@@ -9,16 +9,13 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.vogella.projet_prog_mobile_lalaorr.R;
-import com.vogella.projet_prog_mobile_lalaorr.Amiibogoss;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private List<Amiibogoss> values;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
-    // you provide access to all the views for a data item in a view holder
-    //Comprendre ViewHolder == CELLULE
+    // you provide access to all the views for a data item in a view hold
     public class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public TextView txtHeader;
@@ -69,6 +66,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.txtHeader.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                remove(position);
             }
         });
 
