@@ -17,9 +17,11 @@ Ce projet m'a permis d'apprendre à appeler une API, et gérer le fichier gson r
 # Screenshot : 
 
 ![alt text](https://github.com/Lalaorr/Projet_Prog_Mobile_LalaoRR/blob/master/liste_projet_prog_screenshot.PNG)
+
 Affichage de la liste complète (et longue) des amiibos.
 
-![alt text](https://github.com/Lalaorr/Projet_Prog_Mobile_LalaoRR/blob/master/detail_screenshot.PNG
+![alt text](https://github.com/Lalaorr/Projet_Prog_Mobile_LalaoRR/blob/master/detail_screenshot.PNG)
+
 Affichage des détails de l'amiibo sélectionné.
 
 # API Amiibo : 
